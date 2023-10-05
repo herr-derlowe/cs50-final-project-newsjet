@@ -1,0 +1,15 @@
+{
+  "name": "newsjet-api",
+  "version": "1.0.0",
+  "description": "Newsjet Backend RESTful API for management of favorite articles and users.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Skyler de León",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
