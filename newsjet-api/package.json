@@ -10,6 +10,11 @@
   "author": "Skyler de León",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^8.7.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "yup": "^1.3.2"
   }
 }
