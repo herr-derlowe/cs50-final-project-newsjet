@@ -36,7 +36,22 @@ function getCategories(search = ''){
     }
 }
 
+function getArticlesWithCategory(wordq = '', categoryq = ''){
+    if (wordq === '' || categoryq === '') {
+        return false
+    } else {
+        const articles = db.query(
+            "SELECT * FROM articles WHERE (headline LIKE ? OR short_description LIKE ?) AND category = ? LIMIT 100", 
+            ['%'+wordq+'%', '%'+wordq+'%', categoryq]);
+        if (articles.length != 0) {
+            return articles;
+        }
+        return false;
+    }
+}
+
 module.exports = {
     getArticles,
-    getCategories
+    getCategories,
+    getArticlesWithCategory
 }

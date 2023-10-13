@@ -78,4 +78,24 @@ router.get('/categories/searchby/:q', (req, res, next) => {
     }
 });
 
+router.get('/:wordq/category/:categoryq', (req, res, next) => {
+    const articlesResult = articleService.getArticlesWithCategory(req.params.wordq, 
+        req.params.categoryq.toUpperCase().trim());
+    switch (typeof(articlesResult)) {
+        case 'object':
+            res.status(200).json({
+                message: 'Articles by query and category found',
+                amountFound: articlesResult.length,
+                articles: articlesResult
+            });
+            break;
+
+        default:
+            res.status(404).json({
+                message: 'Articles by category not found'
+            });
+            break;
+    }
+});
+
 module.exports = router;
