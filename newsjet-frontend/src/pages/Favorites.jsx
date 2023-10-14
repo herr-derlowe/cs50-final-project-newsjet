@@ -27,6 +27,7 @@ export default function Favorites() {
       })
       .catch((error) => {
         console.log(error);
+        setFavorites([]);
         setSnackMessage("You don't have any favorites!");
         setSnackType("error");
         setOpenSnack(true);
